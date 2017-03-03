@@ -1,0 +1,53 @@
+﻿<Window x:Class="DataCheckWork.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AppCheck V0.14" Height="323" Width="798" Closed="Window_Closed_1">
+    <Grid Margin="0,0,0,8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="185*"/>
+            <ColumnDefinition Width="49*"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Margin="10,31,10,108" ItemsSource="{Binding}"  AutoGenerateColumns="False" Name="GridDiag" SelectionMode="Single" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" Grid.ColumnSpan="2" >
+
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Background" Value="{Binding Background}"/>
+                </Style>
+            </DataGrid.RowStyle>
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding NUM_PP}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Файл запуска" Binding="{Binding FileStart}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Файл проверки" Binding="{Binding FileCheck}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Время проверки" Binding="{Binding LASTCHECK}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Process" Binding="{Binding PROCESSCOUNT}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Таймаут" Binding="{Binding TIMECHECK}" IsReadOnly="True"/>
+
+                <DataGridTextColumn Header="Рестарты" Binding="{Binding RESTART}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Последний рестарт" Binding="{Binding LASTRESTART}" IsReadOnly="True"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Margin="0,10,10,0" TextWrapping="Wrap" Name="DateUpdate" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="2.539,0.452" Grid.Column="1" Height="16" HorizontalAlignment="Right" Width="145"/>
+        <ListBox x:Name="ListBoxLog"  ItemsSource="{Binding}" Margin="10,183,10,0" Grid.ColumnSpan="2" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="2" >
+                        <Image Height="16" Width="16" Source="{Binding StatusImage}"/>
+                        <TextBlock Text=" | "/>
+                        <TextBlock Text="{Binding DateEvents}"/>
+                        <TextBlock Text=" | "/>
+                        <TextBlock Text="{Binding Component}"/>
+                        <TextBlock Text=" | "/>
+                        <TextBlock Text="{Binding Events}"/>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+    </Grid>
+</Window>

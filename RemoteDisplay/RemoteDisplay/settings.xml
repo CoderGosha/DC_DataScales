@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Connection IP_address="192.168.1.38" Port="13000" Vesoizmeritel="25" Chastota_oprosa="200" />
+<Position Fullscreen="no" Width="798" Height="427" Top="247" Left="477" TopMost="no" />
+<ButtonControl Null="True" Tara="True" Mode="False" Select="False" />
+<Password Hash="" />
