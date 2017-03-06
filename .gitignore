@@ -2,3 +2,7 @@ DataCheckWork/DataCheckWork/obj/*
 DataCheckWork/DataCheckWork/bin/*
 /DataScalesMnlz2/DataScales/obj/*
 /DataScalesMnlz2/DataScales/bin/*
+/DataScalesServer/Tablitsa/log_777/*.csv
+/DataScalesServer/Tablitsa/log_778/*.csv
+/DataScalesServer/Tablitsa/DataScales-KeepAlive.lock
+

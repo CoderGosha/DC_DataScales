@@ -177,6 +177,7 @@ namespace DataScalesModel
                     {
                         string tmpW = RawString.Substring(StartIndex + 2, 6);
                         ret.weightS = tmpW.Replace(" ", "");
+                        ret.weightS = tmpW.Replace("+", "");
                         //Стабильность
                         if (RawString.Substring(StartIndex + 10, 1) == "1")
                             ret.stabil = true;
