@@ -477,7 +477,7 @@ namespace Tablitsa {
 				 this->Controls->Add(this->toolStrip1);
 				 this->MinimumSize = System::Drawing::Size(700, 300);
 				 this->Name = L"MainForm";
-				 this->Text = L"Data-Scales - V21.22";
+				 this->Text = L"Data-Scales - V21.23";
 				 this->Load += gcnew System::EventHandler(this, &MainForm::Form1_Load);
 				 this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &MainForm::MainForm_FormClosed);
 				 this->Resize += gcnew System::EventHandler(this, &MainForm::MainForm_Resize);
@@ -634,7 +634,11 @@ namespace Tablitsa {
 
 
 					 if (elem->oracleConnect) {
-						 dataGridView1->Rows[i]->Cells[7]->Style->BackColor = Color::LightGreen;
+						 //ј тут запилим раздениие в зависимости от времени
+						 if (elem->getLastSendDateTime() > DateTime::Now.AddMinutes(-10))
+							dataGridView1->Rows[i]->Cells[7]->Style->BackColor = Color::LightGreen;
+						 else 
+							 dataGridView1->Rows[i]->Cells[7]->Style->BackColor = Color::LightCyan;
 					 }
 					 else {
 						 dataGridView1->Rows[i]->Cells[7]->Style->BackColor = Color::Tomato;

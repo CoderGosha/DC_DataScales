@@ -78,6 +78,8 @@ public:
 	void Start(void);
 	String^ getErrorOracle(void);
 	String^ getLastSendTime(void){return orcl->lastSendTime;}; 
+	DateTime getLastSendDateTime (void) {return orcl->GetLastSendDateTime();};
+
 	bool sendOracle(){return _sendOracle;};
 		
 	String^ getTypeScales();

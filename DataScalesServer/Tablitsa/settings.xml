@@ -1,10 +1,10 @@
 <Vesy>
   <Oracle>
-    <DataSource>ssmtest2</DataSource>
+    <DataSource>testdca</DataSource>
     <User>mts_scales</User>
     <Password>mtsscales</Password>
     <Interval>600</Interval>
-    <Send>False</Send>
+    <Send>True</Send>
   </Oracle>
   <DataTrack>
     <IP>127.0.0.1</IP>

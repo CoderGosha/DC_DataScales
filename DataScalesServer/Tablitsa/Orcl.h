@@ -41,4 +41,5 @@ public:
 	bool sendData(String^ nom, String^ name, Int32 tara, Int32 stabil, Int32 zero, Int32 kg, Int32 tonn, String^ ves, String^ ip, String^ Weigth_Hour, String^ RawData);
 	String^ error;
 	String^ lastSendTime;
+	DateTime GetLastSendDateTime(void) {return lastSendTimeDT;}
 };
