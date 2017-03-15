@@ -3,23 +3,9 @@
     <DataSource>testdca</DataSource>
     <User>mts_scales</User>
     <Password>mtsscales</Password>
-    <Interval>600</Interval>
+    <Interval>10600</Interval>
     <Send>True</Send>
   </Oracle>
-  <DataTrack>
-    <IP>127.0.0.1</IP>
-    <TimeOut>10</TimeOut>
-    <PortMicrosim>1106</PortMicrosim>
-    <PortJaguar>1105</PortJaguar>
-    <Send>False</Send>
-  </DataTrack>
-  <DataTrack>
-    <IP>192.168.80.5</IP>
-    <TimeOut>100</TimeOut>
-    <PortMicrosim>1106</PortMicrosim>
-    <PortJaguar>1105</PortJaguar>
-    <Send>True</Send>
-  </DataTrack>
   <Password>
     <hash>317210366222432259211830225165226852401031495435200179136180691581924912021520070244</hash>
   </Password>
@@ -27,16 +13,16 @@
     <count>35154165812869159602405322176642321472816121910721839173227248911041992236441197188</count>
   </License>
   <ButtonControl>
-    <Null>True</Null>
+    <Null>False</Null>
     <Tara>False</Tara>
     <Mode>False</Mode>
     <Select>False</Select>
   </ButtonControl>
   <Vesyizm>
     <VesyizmPart>
-      <Number>777</Number>
-      <Place>ДЦА_ТЕСТ</Place>
-      <Type>DEFAULT/TCPIP</Type>
+      <Number>80</Number>
+      <Place>ЛПЦ-1.ПУ-8_АСИ</Place>
+      <Type>DATASCALES_REPEATER</Type>
       <Port>
       </Port>
       <Speed>
@@ -50,8 +36,8 @@
       <Interval>
       </Interval>
       <IpMoxa>192.168.80.15</IpMoxa>
-      <PortMoxa>32000</PortMoxa>
-      <UpdateMoxa>800</UpdateMoxa>
+      <PortMoxa>11005</PortMoxa>
+      <UpdateMoxa>500</UpdateMoxa>
       <EdIzm>КГ</EdIzm>
       <NomerSSM>0</NomerSSM>
       <SendRaw>False</SendRaw>
@@ -61,9 +47,9 @@
       <ModelDLL>-</ModelDLL>
     </VesyizmPart>
     <VesyizmPart>
-      <Number>778</Number>
-      <Place>ДЦА_ТЕСТ</Place>
-      <Type>DATASCALES_DLL</Type>
+      <Number>6</Number>
+      <Place>ЛПЦ-1.ПУ-6_АСИ</Place>
+      <Type>DATASCALES_REPEATER</Type>
       <Port>
       </Port>
       <Speed>
@@ -77,15 +63,15 @@
       <Interval>
       </Interval>
       <IpMoxa>192.168.80.15</IpMoxa>
-      <PortMoxa>32001</PortMoxa>
-      <UpdateMoxa>800</UpdateMoxa>
-      <EdIzm>КГ</EdIzm>
+      <PortMoxa>11006</PortMoxa>
+      <UpdateMoxa>500</UpdateMoxa>
+      <EdIzm>Т</EdIzm>
       <NomerSSM>0</NomerSSM>
       <SendRaw>False</SendRaw>
       <IPSSM>127.0.0.1</IPSSM>
       <MagicString>
       </MagicString>
-      <ModelDLL>RAW</ModelDLL>
+      <ModelDLL>-</ModelDLL>
     </VesyizmPart>
   </Vesyizm>
 </Vesy>

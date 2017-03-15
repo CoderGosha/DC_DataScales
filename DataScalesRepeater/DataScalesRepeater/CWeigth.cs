@@ -226,12 +226,12 @@ namespace DataScalesRepeater
             {
 
                 // Устанавливаем для сокета локальную конечную точку
-                IPHostEntry ipHost = Dns.GetHostEntry(DNS_NAME);
-                IPAddress ipAddr = ipHost.AddressList[1];
+                //IPHostEntry ipHost = Dns.GetHostEntry(DNS_NAME);
+               // IPAddress ipAddr = ipHost.AddressList[1];
                 IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Any, Int32.Parse(PORT));
 
                 // Создаем сокет Tcp/Ip
-                sListener = new Socket(ipAddr.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                sListener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 // Назначаем сокет локальной конечной точке и слушаем входящие сокеты
                 try
                 {

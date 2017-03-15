@@ -1,7 +1,7 @@
 ﻿<Window x:Class="DataScalesRepeater.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="DataScalesRepeater v0.04" Height="460.951" Width="879.034" Closed="Window_Closed_1">
+        Title="DataScalesRepeater v0.05" Height="460.951" Width="879.034" Closed="Window_Closed_1">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="479*"/>

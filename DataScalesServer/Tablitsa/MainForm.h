@@ -477,7 +477,7 @@ namespace Tablitsa {
 				 this->Controls->Add(this->toolStrip1);
 				 this->MinimumSize = System::Drawing::Size(700, 300);
 				 this->Name = L"MainForm";
-				 this->Text = L"Data-Scales - V21.23";
+				 this->Text = L"Data-Scales - V21.24";
 				 this->Load += gcnew System::EventHandler(this, &MainForm::Form1_Load);
 				 this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &MainForm::MainForm_FormClosed);
 				 this->Resize += gcnew System::EventHandler(this, &MainForm::MainForm_Resize);
@@ -636,7 +636,7 @@ namespace Tablitsa {
 					 if (elem->oracleConnect) {
 						 //А тут запилим раздениие в зависимости от времени
 						 if (elem->getLastSendDateTime() > DateTime::Now.AddMinutes(-10))
-							dataGridView1->Rows[i]->Cells[7]->Style->BackColor = Color::LightGreen;
+							 dataGridView1->Rows[i]->Cells[7]->Style->BackColor = Color::LightGreen;
 						 else 
 							 dataGridView1->Rows[i]->Cells[7]->Style->BackColor = Color::LightCyan;
 					 }
@@ -659,14 +659,16 @@ namespace Tablitsa {
 				 //Пишем лог на экран
 				 if ((_weight_list->Count > 0 ) && (_counter_logError >= 2000)) 
 				 {
-					 for (int i=0; i < _weight_list->Count; i++)
-						 if ((_weight_list[i]->getErrorOracle() != "0") && (_weight_list[i]->sendOracle()))
+					 for (int i=0; i < _weight_list->Count; i++) {
+						 String^ Oerror = _weight_list[i]->getErrorOracle();
+						 if ((Oerror != "0") && (_weight_list[i]->sendOracle()))
 						 {
 
 							 String^ now = DateTime::Now.ToString();
-							 String^ send = now + " : " + _weight_list[i]->getErrorOracle();
+							 String^ send = now + " : " + Oerror;
 							 listBox1->Items->Add(send);
 						 }
+					 }
 
 				 } 
 				 if (_counter_logError >= 2000) _counter_logError = 0;

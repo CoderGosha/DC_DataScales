@@ -355,7 +355,7 @@
 			AssemblyName="Oracle.DataAccess, Version=2.112.2.0, PublicKeyToken=89b483f429c47342, processorArchitecture=IA64"
 		/>
 		<AssemblyReference
-			RelativePath="..\..\..\..\Visual Studio 2012\Projects\DataScalesModel\DataScalesModel\bin\Release\DataScalesModel.dll"
+			RelativePath="..\..\DataScalesModel\DataScalesModel\bin\Release\DataScalesModel.dll"
 			AssemblyName="DataScalesModel, Version=1.1.0.0, processorArchitecture=MSIL"
 		/>
 	</References>

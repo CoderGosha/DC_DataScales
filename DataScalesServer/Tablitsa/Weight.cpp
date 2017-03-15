@@ -436,23 +436,41 @@ void CWeight::OracleSend(void){
 			String^ taraTMP = buff[1];
 			String^ stabilTMP = buff[2];
 			String^ nullTMP = buff[3];
+			String^ FixedTmp = buff[4];
+			String^ FixedTimeTmp = buff[5];
+			//Тут вшпиливаем код для отправки фиксированного веса...
+			bool BFixedTmp;
+			if (bool::TryParse(FixedTmp, BFixedTmp)) {
+				try{
+					String^ tmp = "";	
+					if (_sendRawDate) 
+						tmp = _RawData;
 
+					resultMes = orcl->sendDataFixWeight(name, location, bool::Parse(taraTMP), bool::Parse(stabilTMP), bool::Parse(nullTMP), _vesKg, !_vesKg, weightTMP, _currentIP, _Weigth_Hour, tmp, FixedTmp, FixedTimeTmp);
+					this->oracleConnect = resultMes;
+				}
 
-
-			try{
-				String^ tmp = "";	
-				if (_sendRawDate) 
-					tmp = _RawData;
-
-				resultMes = orcl->sendData(name, location, bool::Parse(taraTMP), bool::Parse(stabilTMP), bool::Parse(nullTMP), _vesKg, !_vesKg, weightTMP, _currentIP, _Weigth_Hour, tmp);
-				this->oracleConnect = resultMes;
+				catch (Exception^ e) {
+					_log->Break(name, "Обрыв соединения с Oracle: " + e);
+				}
 			}
 
-			catch (Exception^ e) {
-				_log->Break(name, "Обрыв соединения с Oracle: " + e);
+			else {
+
+				try{
+					String^ tmp = "";	
+					if (_sendRawDate) 
+						tmp = _RawData;
+
+					resultMes = orcl->sendData(name, location, bool::Parse(taraTMP), bool::Parse(stabilTMP), bool::Parse(nullTMP), _vesKg, !_vesKg, weightTMP, _currentIP, _Weigth_Hour, tmp);
+					this->oracleConnect = resultMes;
+				}
+
+				catch (Exception^ e) {
+					_log->Break(name, "Обрыв соединения с Oracle: " + e);
+				}
+
 			}
-
-
 
 			SetStatusUiOracle(resultMes); //TODO
 
@@ -510,6 +528,7 @@ String^ CWeight::getErrorOracle(){
 		String^ error = orcl->error;
 		if (error != "0") {
 			_log->Break(name, error);
+			orcl->error = "0";
 		}
 		return error;
 	}

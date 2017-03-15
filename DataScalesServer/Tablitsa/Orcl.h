@@ -42,4 +42,5 @@ public:
 	String^ error;
 	String^ lastSendTime;
 	DateTime GetLastSendDateTime(void) {return lastSendTimeDT;}
+	bool sendDataFixWeight(String^ nom, String^ name, Int32 tara, Int32 stabil, Int32 zero, Int32 kg, Int32 tonn, String^ ves, String^ ip, String^ Weigth_Hour, String^ RawData, String^ Fixed, String^ FixedTime);
 };
