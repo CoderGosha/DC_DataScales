@@ -439,8 +439,8 @@ void CWeight::OracleSend(void){
 			String^ FixedTmp = buff[4];
 			String^ FixedTimeTmp = buff[5];
 			//Тут вшпиливаем код для отправки фиксированного веса...
-			bool BFixedTmp;
-			if (bool::TryParse(FixedTmp, BFixedTmp)) {
+			bool BFixedTmp = false;
+			if (bool::TryParse(FixedTmp, BFixedTmp) && BFixedTmp) {
 				try{
 					String^ tmp = "";	
 					if (_sendRawDate) 
