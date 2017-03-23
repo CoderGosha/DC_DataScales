@@ -5,4 +5,4 @@ DataCheckWork/DataCheckWork/bin/*
 /DataScalesServer/Tablitsa/log_777/*.csv
 /DataScalesServer/Tablitsa/log_778/*.csv
 /DataScalesServer/Tablitsa/DataScales-KeepAlive.lock
-
+*.csv
